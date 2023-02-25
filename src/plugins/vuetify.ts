@@ -8,10 +8,10 @@ import * as directives from 'vuetify/directives'
 
 // Vuetify
 import { createVuetify } from 'vuetify'
-import { md1 } from 'vuetify/blueprints'
+import { md2, md3 } from 'vuetify/blueprints'
 
 export default createVuetify({
-  blueprint: md1, //using blueprints https://next.vuetifyjs.com/en/features/blueprints
+//   blueprint: md3, //using blueprints https://next.vuetifyjs.com/en/features/blueprints
   components,
   directives,
   // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides

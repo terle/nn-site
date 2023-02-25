@@ -4,6 +4,7 @@ import parrallaxImageUrl from './assets/jason-hogan-YyFwUKzv5FM-unsplash.jpg'
 import logoBigUrl from './assets/logo-big.svg'
 import logosmallUrl from './assets/logo-smal.svg'
 import profilImageUrl from './assets/profile.png'
+import image1Url from './assets/olena-sergienko-dIMJWLx1YbE-unsplash.jpg'
 
 const dotColorPast = "blue-grey-lighten-3"
 const dotColorPresent = "blue-grey-lighten-1"
@@ -19,9 +20,10 @@ const dotColorPresent = "blue-grey-lighten-1"
         Northern Nerds
       </v-app-bar-title>
     </v-app-bar>
-    <v-parallax class="pt-16" max-height="50vw" :src="parrallaxImageUrl">
-      <div class="mt-6 d-flex flex-column justify-center align-center">
-        <v-img :src="logoBigUrl" width="50vh"></v-img>
+    <v-container fluid>
+    <v-parallax class="mt-16" height="60vw" :src="parrallaxImageUrl">
+      <div class="mt-8 d-flex flex-column justify-center align-center">
+        <v-img :src="logoBigUrl" width="40vw" max-width="50vw"></v-img>
         <div class="text-h6 font-weight-light text-white mt-2">
           Maximazing freedom since 2019
         </div>
@@ -33,183 +35,162 @@ const dotColorPresent = "blue-grey-lighten-1"
         Hogan</a> on <a
         href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
     </div>
+    </v-container>
 
-    <div id="about" class="d-flex justify-space-between align-content-strech">
-      
-        <v-card class="flex-grow ma-4">
-          <v-card-title>
-            <span class="text-h1 font-weight-thin">
-              Terkel
-              <span class="font-weight-light">Brix</span>
-            </span>
-          </v-card-title>
+    <v-container>
+      <v-row>
+        <p class="text-h4 text-justify my-4">
+          Revolutionize Your Business with Cutting-Edge IT Solutions from Northern Nerds
+        </p>
+        <p class="text-h4 text-justify my-4">
+          The Expert IT Consultants You Can Trust!
+        </p>
+      </v-row>
+    </v-container>
 
-          <v-card-subtitle>
-            Bachelor of Engineering, IT - DTU - 2013
-          </v-card-subtitle>
-          <v-card-text>
-            <v-timeline density="compact" align="start">
-              <v-timeline-item :dot-color="dotColorPresent" size="small">
-                <div class="d-flex">
-                  <strong class="me-4">Northern Nerds</strong>
-                  <div>
-                    <strong>2019-now</strong>
-                    <div class="text-caption">
-                      Freelance Consultant
-                    </div>
-                  </div>
-                </div>
-              </v-timeline-item>
-              <v-timeline-item :dot-color="dotColorPast" size="small">
-                <div class="d-flex">
-                  <strong class="me-4">Apply Agency</strong>
-                  <div>
-                    <strong>Dec 2021 - Jan 2023</strong>
-                    <div class="text-caption mb-2">
-                      Senior Software Udvikler
-                    </div>
-                  </div>
-                </div>
-              </v-timeline-item>
-              <v-timeline-item :dot-color="dotColorPast" size="small">
-                <div class="d-flex">
-                  <strong class="me-4">Nodeco A/S</strong>
-                  <div>
-                    <strong>Aug 2020 - Dec 2021</strong>
-                    <div class="text-caption mb-2">
-                      IT Architect
-                    </div>
-                  </div>
-                </div>
-              </v-timeline-item>
-              <v-timeline-item :dot-color="dotColorPast" size="small">
-                <div class="d-flex">
-                  <strong class="me-4">Codehouse (later Valtech)</strong>
-                  <div>
-                    <strong>Apr 2017 - Apr 2019</strong>
-                    <div class="text-caption mb-2">
-                      Consultant/Sitecore Developer
-                    </div>
-                  </div>
-                </div>
-              </v-timeline-item>
-              <v-timeline-item :dot-color="dotColorPast" size="small">
-                <div class="d-flex">
-                  <strong class="me-4">Rehfeld (later IQVIA)</strong>
-                  <div>
-                    <strong>Apr 2016 - Apr 2017</strong>
-                    <div class="text-caption mb-2">
-                      Consultant
-                    </div>
-                  </div>
-                </div>
-              </v-timeline-item>
-              <v-timeline-item :dot-color="dotColorPast" size="small">
-                <div class="d-flex">
-                  <strong class="me-4">Netcompany</strong>
-                  <div>
-                    <strong>Jan 2014 - Apr 2016</strong>
-                    <div class="text-caption mb-2">
-                      Senior Developer
-                    </div>
-                  </div>
-                </div>
-              </v-timeline-item>
-              <v-timeline-item :dot-color="dotColorPast" size="small">
-                <div class="d-flex">
-                  <strong class="me-4">Noitso</strong>
-                  <div>
-                    <strong>Jun 2012 - Jun 2013</strong>
-                    <div class="text-caption mb-2">
-                      Intern & Student Worker
-                    </div>
-                  </div>
-                </div>
-              </v-timeline-item>
-            </v-timeline>
-          </v-card-text>
-        </v-card>
-    
-      <v-img class="bg-white flex-grow" max-height="60vh" :src="profilImageUrl"></v-img>
-    
-  </div>
+    <section id="intro">
+      <v-row>
+        <v-col cols="6" class="d-none d-md-flex">
+          <v-img :src="image1Url" style="position: relative;">
+            <div style="position: absolute; bottom: 0; right: 0; padding: 8px;" class="text-disabled">
+              Photo by <a
+                href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena
+                Sergienko</a> on <a
+                href="https://unsplash.com/photos/dIMJWLx1YbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            </div>
+          </v-img>
 
-  <!-- <v-timeline>
-      <v-timeline-item dot-color="purple-lighten-2" fill-dot>
-        <v-card>
-          <v-card-title class="bg-purple-lighten-2">
-            <v-icon size="large" class="me-4" icon="mdi-magnify"></v-icon>
-            <h2 class="font-weight-light">
-              Title 1
-            </h2>
-          </v-card-title>
-          <v-card-text>
-            Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire
-            principes at. Est et nobis iisque percipit.
-          </v-card-text>
-        </v-card>
-      </v-timeline-item>
+        </v-col>
+        <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
+          <div>
+            <h2>About</h2>
+            <p class="ma-4">
+              Northern Nerds is a Danish IT consulting business run by Terkel Brix, a freelance IT consultant with 12+
+              years of experience. Terkel specializes in Web Application Development, C# and ASP.NET Development,
+              Sitecore/C#-based Solutions, and Vue.js Development. He offers personalized solutions to businesses of all
+              sizes and industries, building strong relationships with clients and delivering exceptional results that
+              exceed their expectations.
+            </p>
+            <p class="ma-4">
+              Terkel is committed to providing exceptional customer service and support
+              throughout every stage of the project.
+            </p>
 
-      <v-timeline-item dot-color="amber-lighten-1" fill-dot size="x-small">
-        <v-card>
-          <v-card-title class="bg-amber-lighten-1 justify-end">
-            <h2 class="me-4 font-weight-light">
-              Title 2
-            </h2>
-            <v-icon size="large" icon="mdi-home-outline"></v-icon>
-          </v-card-title>
-          <v-card-text>
-            Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire
-            principes at. Est et nobis iisque percipit.
-          </v-card-text>
-        </v-card>
-      </v-timeline-item>
+            <p class="ma-4">
+              Thank you for considering Northern Nerds for your IT consultingneeds.
+            </p>
+          </div>
+        </v-col>
+      </v-row>
+    </section>
 
-      <v-timeline-item dot-color="cyan-lighten-1" fill-dot>
-        <v-card>
-          <v-card-title class="bg-cyan-lighten-1">
-            <v-icon class="me-4" size="large" icon="mdi-email-outline"></v-icon>
-            <h2 class="font-weight-light">
-              Title 3
-            </h2>
-          </v-card-title>
-          <v-card-text>
-            Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire
-            principes at. Est et nobis iisque percipit.
-          </v-card-text>
-        </v-card>
-      </v-timeline-item>
+    <section id="about" class="">
+      <v-container fluid>
+        <v-row justify="center">
+          <v-col cols="12">
+            <p class="text-center">
+              <span class="text-h1">Terkel Brix</span> <span class="text-h6 text-medium-emphasis">Bachelor of Engineering,
+                IT - DTU</span>
+            </p>
+          </v-col>
+        </v-row>
+        <v-row>
+          <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
+            <v-card class="ma-4" height="100%">
+              <v-card-title>
+                Career
+              </v-card-title>
+              <v-card-text>
+                <v-timeline side="end">
+                  <v-timeline-item :dot-color="dotColorPresent" size="small" rounded>
+                    <div class="d-flex">
+                      <strong class="me-4">Northern Nerds</strong>
+                      <div>
+                        <strong>2019-now</strong>
+                        <div class="text-caption">
+                          Freelance Consultant
+                        </div>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
+                    <div class="d-flex">
+                      <strong class="me-4">Apply Agency</strong>
+                      <div>
+                        <strong>Dec 2021 - Jan 2023</strong>
+                        <div class="text-caption mb-2">
+                          Senior Software Udvikler
+                        </div>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
+                    <div class="d-flex">
+                      <strong class="me-4">Nodeco A/S</strong>
+                      <div>
+                        <strong>Aug 2020 - Dec 2021</strong>
+                        <div class="text-caption mb-2">
+                          IT Architect
+                        </div>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
+                    <div class="d-flex">
+                      <strong class="me-4">Codehouse (later Valtech)</strong>
+                      <div>
+                        <strong>Apr 2017 - Apr 2019</strong>
+                        <div class="text-caption mb-2">
+                          Consultant/Sitecore Developer
+                        </div>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
+                    <div class="d-flex">
+                      <strong class="me-4">Rehfeld (later IQVIA)</strong>
+                      <div>
+                        <strong>Apr 2016 - Apr 2017</strong>
+                        <div class="text-caption mb-2">
+                          Consultant
+                        </div>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
+                    <div class="d-flex">
+                      <strong class="me-4">Netcompany</strong>
+                      <div>
+                        <strong>Jan 2014 - Apr 2016</strong>
+                        <div class="text-caption mb-2">
+                          Senior Developer
+                        </div>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
+                    <div class="d-flex">
+                      <strong class="me-4">Noitso</strong>
+                      <div>
+                        <strong>Jun 2012 - Jun 2013</strong>
+                        <div class="text-caption mb-2">
+                          Intern & Student Worker
+                        </div>
+                      </div>
+                    </div>
+                  </v-timeline-item>
+                </v-timeline>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="6" class="d-none d-md-flex">
+            <v-img class="bg-white ma-4" :src="profilImageUrl"></v-img>
 
-      <v-timeline-item dot-color="red-lighten-1" fill-dot size="x-small">
-        <v-card>
-          <v-card-title class="bg-red-lighten-1 justify-end">
-            <h2 class="me-4 font-weight-light">
-              Title 4
-            </h2>
-            <v-icon size="large" icon="mdi-account-multiple-outline"></v-icon>
-          </v-card-title>
-          <v-card-text>
-            Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire
-            principes at. Est et nobis iisque percipit.
-          </v-card-text>
-        </v-card>
-      </v-timeline-item>
-
-      <v-timeline-item dot-color="green-lighten-1" fill-dot>
-        <v-card>
-          <v-card-title class="bg-green-lighten-1">
-            <v-icon class="me-4" size="large" icon="mdi-phone-in-talk"></v-icon>
-            <h2 class="font-weight-light">
-              Title 5
-            </h2>
-            </v-card-title>
-            <v-card-text>
-              Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire
-              principes at. Est et nobis iisque percipit.
-            </v-card-text>
-          </v-card>
-        </v-timeline-item>
-      </v-timeline> -->
+          </v-col>
+        </v-row>
+      </v-container>
+    </section>
+  
 
     <v-footer class="text-center d-flex flex-column">
       <div>
