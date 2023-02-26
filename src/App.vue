@@ -21,20 +21,20 @@ const dotColorPresent = "blue-grey-lighten-1"
       </v-app-bar-title>
     </v-app-bar>
     <v-container fluid>
-    <v-parallax class="mt-16" height="60vw" :src="parrallaxImageUrl">
-      <div class="mt-8 d-flex flex-column justify-center align-center">
-        <v-img :src="logoBigUrl" width="40vw" max-width="50vw"></v-img>
-        <div class="text-h6 font-weight-light text-white mt-2">
-          Maximazing freedom since 2019
+      <v-parallax class="mt-16" height="60vw" :src="parrallaxImageUrl">
+        <div class="mt-8 d-flex flex-column  align-center">
+          <v-img :src="logoBigUrl" width="40vw" max-width="50vw"></v-img>
+          <div class="text-h6 font-weight-light text-white mt-2">
+            Maximazing freedom since 2019
+          </div>
         </div>
+      </v-parallax>
+      <div class="text-disabled credit">
+        Photo by <a
+          href="https://unsplash.com/@jasonhogan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason
+          Hogan</a> on <a
+          href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
       </div>
-    </v-parallax>
-    <div class="text-disabled">
-      Photo by <a
-        href="https://unsplash.com/@jasonhogan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason
-        Hogan</a> on <a
-        href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-    </div>
     </v-container>
 
     <v-container>
@@ -50,16 +50,14 @@ const dotColorPresent = "blue-grey-lighten-1"
 
     <section id="intro">
       <v-row>
-        <v-col cols="6" class="d-none d-md-flex">
-          <v-img :src="image1Url" style="position: relative;">
-            <div style="position: absolute; bottom: 0; right: 0; padding: 8px;" class="text-disabled">
-              Photo by <a
-                href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena
-                Sergienko</a> on <a
-                href="https://unsplash.com/photos/dIMJWLx1YbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-            </div>
-          </v-img>
-
+        <v-col cols="6" class="d-none d-md-flex flex-column">
+          <v-img :src="image1Url"></v-img>
+          <div class="text-disabled credit">
+            Photo by <a
+              href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena
+              Sergienko</a> on <a
+              href="https://unsplash.com/photos/dIMJWLx1YbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+          </div>
         </v-col>
         <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
           <div>
@@ -77,7 +75,7 @@ const dotColorPresent = "blue-grey-lighten-1"
             </p>
 
             <p class="ma-4">
-              Thank you for considering Northern Nerds for your IT consultingneeds.
+              Thank you for considering Northern Nerds for your IT consulting needs.
             </p>
           </div>
         </v-col>
@@ -87,12 +85,14 @@ const dotColorPresent = "blue-grey-lighten-1"
     <section id="about" class="">
       <v-container fluid>
         <v-row justify="center">
-          <v-col cols="12">
-            <p class="text-center">
-              <span class="text-h1">Terkel Brix</span> <span class="text-h6 text-medium-emphasis">Bachelor of Engineering,
-                IT - DTU</span>
-            </p>
-          </v-col>
+          <div class="d-flex align-center flex-column">
+            <div class="text-h1">
+              Terkel Brix
+            </div>
+            <div class="text-h6 text-medium-emphasis">
+              Bachelor of Engineering, IT - DTU - 2013
+            </div>
+          </div>
         </v-row>
         <v-row>
           <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
@@ -190,7 +190,7 @@ const dotColorPresent = "blue-grey-lighten-1"
         </v-row>
       </v-container>
     </section>
-  
+
 
     <v-footer class="text-center d-flex flex-column">
       <div>
@@ -212,4 +212,14 @@ const dotColorPresent = "blue-grey-lighten-1"
   </v-app>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+.credit {
+  background-color: #F5F5F5;
+}
+
+.credit>a {
+
+  color: #BDBDBD;
+}
+</style>
