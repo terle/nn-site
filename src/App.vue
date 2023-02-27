@@ -5,10 +5,7 @@ import logoBigUrl from './assets/logo-big.svg'
 import logosmallUrl from './assets/logo-smal.svg'
 import profilImageUrl from './assets/profile.png'
 import image1Url from './assets/olena-sergienko-dIMJWLx1YbE-unsplash.jpg'
-
-// import { goTo } from 'vuetify/lib/services/goto/index'
-const dotColorPast = "blue-grey-lighten-3"
-const dotColorPresent = "blue-grey-lighten-1"
+import { ref } from 'vue'
 
 const scrollTo = (elmId: string) => {
   const element = document.getElementById(elmId);
@@ -16,24 +13,75 @@ const scrollTo = (elmId: string) => {
     return
   element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 }
+const drawer = ref(false);
+const links = ref([
+  { text: 'About', target: 'about' },
+  { text: 'Testimonial', target: 'testimonials' },
+  { text: 'Me', target: 'me' },
+])
+
+const workExperience = ref([
+  {
+    pow: "Northern Nerds",
+    period: "2019-now",
+    title: "Freelance Consultant"
+  },
+  {
+    pow: "Apply Agency",
+    period: "Dec 2021 - Jan 2023",
+    title: "Senior Software Udvikler"
+  },
+  {
+    pow: "Nodeco A/S",
+    period: "Aug 2020 - Dec 2021",
+    title: "IT Architect"
+  },
+  {
+    pow: "Codehouse (later Valtech)",
+    period: "Apr 2017 - Apr 2019",
+    title: "Consultant/Sitecore Developer"
+  }, {
+    pow: "Rehfeld (later IQVIA)",
+    period: "Apr 2016 - Apr 2017",
+    title: "Consultant"
+  }, {
+    pow: "Netcompany",
+    period: "Jan 2014 - Apr 2016",
+    title: "Senior Developer"
+  }, {
+    pow: "Noitso",
+    period: "Jun 2012 - Jun 2013",
+    title: "Intern & Student Worker"
+  }
+])
+
 </script>
 
 <template>
   <v-app>
+    <v-navigation-drawer v-model="drawer" location="bottom" temporary>
+      <v-list-item v-for="link in links" :key="link.text" @click="scrollTo(link.target)">
+        <v-btn variant="text" class="mx-2" rounded="xl">
+          {{ link.text }}
+        </v-btn>
+      </v-list-item>
+    </v-navigation-drawer>
     <v-app-bar app elevation="10">
-      <v-app-bar-nav-icon @click="scrollTo('top')">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer">
         <v-img :src="logosmallUrl" width="4vh"></v-img>
       </v-app-bar-nav-icon>
       <v-app-bar-title class="font-weight-thin">
         Northern Nerds
       </v-app-bar-title>
+      <v-spacer></v-spacer>
       <v-row justify="center" no-gutters>
-        <v-btn variant="text" class="mx-2" rounded="xl" @click="scrollTo('about')">About</v-btn>
-        <v-btn variant="text" class="mx-2" rounded="xl" @click="scrollTo('testimonials')">Testimonial</v-btn>
-        <v-btn variant="text" class="mx-2" rounded="xl" @click="scrollTo('me')">Me</v-btn>
+        <v-btn v-for="link in links" :key="link.text" variant="text" class="mx-2" rounded="xl"
+          @click="scrollTo(link.target)">
+          {{ link.text }}
+        </v-btn>
       </v-row>
-
     </v-app-bar>
+
     <section id="top">
       <v-container fluid>
         <v-parallax class="mt-16" height="60vw" :src="parrallaxImageUrl">
@@ -121,79 +169,14 @@ const scrollTo = (elmId: string) => {
               </v-card-title>
               <v-card-text>
                 <v-timeline side="end">
-                  <v-timeline-item :dot-color="dotColorPresent" size="small" rounded>
+                  <v-timeline-item v-for="(item, key) in workExperience" :key="item.title" dot-color="blue-grey-lighten-3"
+                    size="small" rounded>
                     <div class="d-flex">
-                      <strong class="me-4">Northern Nerds</strong>
+                      <strong class="me-4">{{ item.pow }}</strong>
                       <div>
-                        <strong>2019-now</strong>
+                        <strong>{{ item.period }}</strong>
                         <div class="text-caption">
-                          Freelance Consultant
-                        </div>
-                      </div>
-                    </div>
-                  </v-timeline-item>
-                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
-                    <div class="d-flex">
-                      <strong class="me-4">Apply Agency</strong>
-                      <div>
-                        <strong>Dec 2021 - Jan 2023</strong>
-                        <div class="text-caption mb-2">
-                          Senior Software Udvikler
-                        </div>
-                      </div>
-                    </div>
-                  </v-timeline-item>
-                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
-                    <div class="d-flex">
-                      <strong class="me-4">Nodeco A/S</strong>
-                      <div>
-                        <strong>Aug 2020 - Dec 2021</strong>
-                        <div class="text-caption mb-2">
-                          IT Architect
-                        </div>
-                      </div>
-                    </div>
-                  </v-timeline-item>
-                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
-                    <div class="d-flex">
-                      <strong class="me-4">Codehouse (later Valtech)</strong>
-                      <div>
-                        <strong>Apr 2017 - Apr 2019</strong>
-                        <div class="text-caption mb-2">
-                          Consultant/Sitecore Developer
-                        </div>
-                      </div>
-                    </div>
-                  </v-timeline-item>
-                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
-                    <div class="d-flex">
-                      <strong class="me-4">Rehfeld (later IQVIA)</strong>
-                      <div>
-                        <strong>Apr 2016 - Apr 2017</strong>
-                        <div class="text-caption mb-2">
-                          Consultant
-                        </div>
-                      </div>
-                    </div>
-                  </v-timeline-item>
-                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
-                    <div class="d-flex">
-                      <strong class="me-4">Netcompany</strong>
-                      <div>
-                        <strong>Jan 2014 - Apr 2016</strong>
-                        <div class="text-caption mb-2">
-                          Senior Developer
-                        </div>
-                      </div>
-                    </div>
-                  </v-timeline-item>
-                  <v-timeline-item :dot-color="dotColorPast" size="small" rounded>
-                    <div class="d-flex">
-                      <strong class="me-4">Noitso</strong>
-                      <div>
-                        <strong>Jun 2012 - Jun 2013</strong>
-                        <div class="text-caption mb-2">
-                          Intern & Student Worker
+                          {{ item.title }}
                         </div>
                       </div>
                     </div>
