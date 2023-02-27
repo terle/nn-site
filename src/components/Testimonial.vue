@@ -58,46 +58,52 @@ const data = ref(recommendationData.sort((a, b) => b.recommendationDate.getTime(
 
 <template>
     <div class="text-h1">
-              Testimonials
-            </div>
-        <v-container>
-            <v-row>
-                <v-col v-for="(item, index) in data" :key="item.name" xl="4" lg="6" md="6" cols="12">
-                    <v-card class="ma-4">
-                        <v-card-text class="ma-2">
-                            <v-row>
-                                <v-col cols="4">
-                                    <div class="d-flex flex-column align-center text-center mt-3">
-                                        <a :href="item.profileUrl">
-                                            <v-avatar :image="item.profileImage" size="62" />
-                                            <div class="text-high-emphasis">{{ item.name }}</div>
-                                            <div class="text-medium-emphasis">{{ item.title }}</div>
-                                        </a>
-                                        <v-rating model-value="5" class="mt-6" density="compact" disabled></v-rating>
+        Testimonials
+    </div>
+    <v-container>
+        <v-row>
+            <v-col v-for="(item, index) in data" :key="item.name" xl="4" lg="6" md="6" cols="12">
+                <v-card class="ma-4">
+                    <v-card-text class="ma-2">
+                        <v-row>
+                            <v-col cols="4">
+                                <div class="d-flex flex-column align-center text-center mt-3">
+                                    <a :href="item.profileUrl">
+                                        <v-avatar :image="item.profileImage" size="62" />
+                                        <div class="text-high-emphasis">{{ item.name }}</div>
+                                        <div class="text-medium-emphasis">{{ item.title }}</div>
+                                    </a>
+                                    <div class="d-flex mt-3">
+                                        <v-icon icon="mdi-star" />
+                                        <v-icon icon="mdi-star" />
+                                        <v-icon icon="mdi-star" />
+                                        <v-icon icon="mdi-star" />
+                                        <v-icon icon="mdi-star" />
                                     </div>
-                                </v-col>
-                                <v-col cols="8">
-                                    <v-icon icon="mdi-linkedin" />
-                                    <v-icon icon="ma-2 mdi-format-quote-open mdi-48px" />
-                                    <p class="text-disabled">
-                                        <span v-if="item.showMore || item.recommendationTextRaw.length <= 200"
-                                            v-html="item.recommendationTextRaw">
-                                        </span>
-                                        <span v-else v-bind:innerHTML="truncatedText(item.recommendationTextRaw)"></span>
+                                </div>
+                            </v-col>
+                            <v-col cols="8">
+                                <v-icon icon="mdi-linkedin" />
+                                <v-icon icon="ma-2 mdi-format-quote-open mdi-48px" />
+                                <p class="text-disabled">
+                                    <span v-if="item.showMore || item.recommendationTextRaw.length <= 200"
+                                        v-html="item.recommendationTextRaw">
+                                    </span>
+                                    <span v-else v-bind:innerHTML="truncatedText(item.recommendationTextRaw)"></span>
 
-                                    </p>
-                                    <div class="d-flex justify-end">
-                                        <v-btn v-if="item.recommendationTextRaw.length > 200"
-                                            :icon="item.showMore ? 'mdi-chevron-up' : 'mdi-chevron-down'" variant="outlined"
-                                            size="small" @click="item.showMore = !item.showMore" class=""></v-btn>
-                                    </div>
-                                </v-col>
-                            </v-row>
-                        </v-card-text>
-                    </v-card>
-                </v-col>
-            </v-row>
-        </v-container>
+                                </p>
+                                <div class="d-flex justify-end">
+                                    <v-btn v-if="item.recommendationTextRaw.length > 200"
+                                        :icon="item.showMore ? 'mdi-chevron-up' : 'mdi-chevron-down'" variant="outlined"
+                                        size="small" @click="item.showMore = !item.showMore" class=""></v-btn>
+                                </div>
+                            </v-col>
+                        </v-row>
+                    </v-card-text>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <style scoped>
