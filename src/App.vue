@@ -1,54 +1,69 @@
 <script setup lang="ts">
-
+import Testimonial from './components/Testimonial.vue'
 import parrallaxImageUrl from './assets/jason-hogan-YyFwUKzv5FM-unsplash.jpg'
 import logoBigUrl from './assets/logo-big.svg'
 import logosmallUrl from './assets/logo-smal.svg'
 import profilImageUrl from './assets/profile.png'
 import image1Url from './assets/olena-sergienko-dIMJWLx1YbE-unsplash.jpg'
 
+// import { goTo } from 'vuetify/lib/services/goto/index'
 const dotColorPast = "blue-grey-lighten-3"
 const dotColorPresent = "blue-grey-lighten-1"
+
+const scrollTo = (elmId: string) => {
+  const element = document.getElementById(elmId);
+  if (element == null)
+    return
+  element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+}
 </script>
 
 <template>
   <v-app>
     <v-app-bar app elevation="10">
-      <v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="scrollTo('top')">
         <v-img :src="logosmallUrl" width="4vh"></v-img>
       </v-app-bar-nav-icon>
       <v-app-bar-title class="font-weight-thin">
         Northern Nerds
       </v-app-bar-title>
-    </v-app-bar>
-    <v-container fluid>
-      <v-parallax class="mt-16" height="60vw" :src="parrallaxImageUrl">
-        <div class="mt-8 d-flex flex-column  align-center">
-          <v-img :src="logoBigUrl" width="40vw" max-width="50vw"></v-img>
-          <div class="text-h6 font-weight-light text-white mt-2">
-            Maximazing freedom since 2019
-          </div>
-        </div>
-      </v-parallax>
-      <div class="text-disabled credit">
-        Photo by <a
-          href="https://unsplash.com/@jasonhogan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason
-          Hogan</a> on <a
-          href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      </div>
-    </v-container>
-
-    <v-container>
-      <v-row>
-        <p class="text-h4 text-justify my-4">
-          Revolutionize Your Business with Cutting-Edge IT Solutions from Northern Nerds
-        </p>
-        <p class="text-h4 text-justify my-4">
-          The Expert IT Consultants You Can Trust!
-        </p>
+      <v-row justify="center" no-gutters>
+        <v-btn variant="text" class="mx-2" rounded="xl" @click="scrollTo('about')">About</v-btn>
+        <v-btn variant="text" class="mx-2" rounded="xl" @click="scrollTo('testimonials')">Testimonial</v-btn>
+        <v-btn variant="text" class="mx-2" rounded="xl" @click="scrollTo('me')">Me</v-btn>
       </v-row>
-    </v-container>
 
-    <section id="intro">
+    </v-app-bar>
+    <section id="top">
+      <v-container fluid>
+        <v-parallax class="mt-16" height="60vw" :src="parrallaxImageUrl">
+          <div class="mt-8 d-flex flex-column  align-center">
+            <v-img :src="logoBigUrl" width="40vw" max-width="50vw"></v-img>
+            <div class="text-h6 font-weight-light text-white mt-2">
+              Maximazing freedom since 2019
+            </div>
+          </div>
+        </v-parallax>
+        <div class="text-disabled credit">
+          Photo by <a
+            href="https://unsplash.com/@jasonhogan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason
+            Hogan</a> on <a
+            href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </div>
+      </v-container>
+
+      <v-container>
+        <v-row>
+          <p class="text-h4 text-justify my-4">
+            Revolutionize Your Business with Cutting-Edge IT Solutions from Northern Nerds
+          </p>
+          <p class="text-h4 text-justify my-4">
+            The Expert IT Consultants You Can Trust!
+          </p>
+        </v-row>
+      </v-container>
+    </section>
+    <section id="about">
       <v-row>
         <v-col cols="6" class="d-none d-md-flex flex-column">
           <v-img :src="image1Url"></v-img>
@@ -82,7 +97,11 @@ const dotColorPresent = "blue-grey-lighten-1"
       </v-row>
     </section>
 
-    <section id="about" class="">
+    <section id="testimonials">
+      <Testimonial />
+    </section>
+
+    <section id="me" class="">
       <v-container fluid>
         <v-row justify="center">
           <div class="d-flex align-center flex-column">
@@ -191,7 +210,6 @@ const dotColorPresent = "blue-grey-lighten-1"
       </v-container>
     </section>
 
-
     <v-footer class="text-center d-flex flex-column">
       <div>
         <v-btn class="mx-4" icon="mdi-linkedin" variant="text" href="https://www.linkedin.com/in/tbrix/"
@@ -213,7 +231,6 @@ const dotColorPresent = "blue-grey-lighten-1"
 </template>
 
 <style scoped>
-
 .credit {
   background-color: #F5F5F5;
 }
