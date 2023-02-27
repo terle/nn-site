@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚚 Get latest code
       - uses: actions/checkout@v3
+        name: 🚚 Get latest code
         with:
           fetch-depth: 0
-      - name: Use Node.js 16
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v3
+        name: Use Node.js 16
         with:
           node-version: "16"
 
