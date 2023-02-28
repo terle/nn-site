@@ -57,7 +57,7 @@ const data = ref(recommendationData.sort((a, b) => b.recommendationDate.getTime(
 </script>
 
 <template>
-    <div class="text-h1">
+    <div class="text-h2">
         Testimonials
     </div>
     <v-container>
@@ -110,4 +110,5 @@ const data = ref(recommendationData.sort((a, b) => b.recommendationDate.getTime(
 a {
     text-decoration: none;
 }
+
 </style>

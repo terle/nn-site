@@ -102,10 +102,10 @@ const workExperience = ref([
 
       <v-container>
         <v-row>
-          <p class="text-h4 text-justify my-4">
+          <p class="text-h5 text-justify text-uppercase">
             Revolutionize Your Business with Cutting-Edge IT Solutions from Northern Nerds
           </p>
-          <p class="text-h4 text-justify my-4">
+          <p class="text-h5 text-justify text-uppercase" >
             The Expert IT Consultants You Can Trust!
           </p>
         </v-row>
@@ -124,7 +124,7 @@ const workExperience = ref([
         </v-col>
         <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
           <div>
-            <h2>About</h2>
+            <div class="text-h2">About</div>
             <p class="ma-4">
               Northern Nerds is a Danish IT consulting business run by Terkel Brix, a freelance IT consultant with 12+
               years of experience. Terkel specializes in Web Application Development, C# and ASP.NET Development,
@@ -153,7 +153,7 @@ const workExperience = ref([
       <v-container fluid>
         <v-row justify="center">
           <div class="d-flex align-center flex-column">
-            <div class="text-h1">
+            <div class="text-h2">
               Terkel Brix
             </div>
             <div class="text-h6 text-medium-emphasis">
