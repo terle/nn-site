@@ -67,7 +67,7 @@ const workExperience = ref([
       </v-list-item>
     </v-navigation-drawer>
     <v-app-bar app elevation="10">
-      <div class="ma-2 ">
+      <div class="ma-2" @click="scrollTo('top')">
         <v-img :src="logosmallUrl" width="4vh" />
       </div>
       <v-app-bar-title class="font-weight-thin d-none d-md-flex">
@@ -91,32 +91,32 @@ const workExperience = ref([
       </v-row>
     </v-app-bar>
 
-    
-      <v-container fluid class="pa-0">
-        <v-parallax class="mt-13" height="60vw" :src="parrallaxImageUrl">
-          <div class="mt-8 d-flex flex-column  align-center">
-            <v-img :src="logoBigUrl" width="40vw" max-width="50vw"></v-img>
-            <div class="text-h6 font-weight-light text-white mt-2">
-              Maximazing freedom since 2019
-            </div>
+
+    <v-container fluid class="pa-0" id="top">
+      <v-parallax class="mt-13" height="60vw" :src="parrallaxImageUrl">
+        <div class="mt-8 d-flex flex-column  align-center">
+          <v-img :src="logoBigUrl" width="40vw" max-width="50vw"></v-img>
+          <div class="text-h6 font-weight-light text-white mt-2">
+            Maximazing freedom since 2019
           </div>
-        </v-parallax>
-        <div class="text-disabled credit">
-          Photo by <a
-            href="https://unsplash.com/@jasonhogan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason
-            Hogan</a> on <a
-            href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         </div>
-      </v-container>
-      <v-container fluid class="tagline text-center text-uppercase text-white bg-grey-darken-2 py-4 px-0">
-        <v-row align="center">
-          <v-col cols="12">
-            <h1 class="headline mb-6"> Revolutionize Your Business</h1>
-            <h2 class="subtitle-1 mb-12">with Cutting-Edge IT Solutions from Northern Nerds</h2>
-            <p class="subtitle-2">The Expert IT Consultants You Can Trust!</p>
-          </v-col>
-        </v-row>
-      </v-container>
+      </v-parallax>
+      <div class="text-disabled credit">
+        Photo by <a
+          href="https://unsplash.com/@jasonhogan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason
+          Hogan</a> on <a
+          href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      </div>
+    </v-container>
+    <v-container fluid class="tagline text-center text-uppercase text-white bg-grey-darken-2 py-4 px-0">
+      <v-row align="center">
+        <v-col cols="12">
+          <h1 class="headline mb-6"> Revolutionize Your Business</h1>
+          <h2 class="subtitle-1 mb-12">with Cutting-Edge IT Solutions from Northern Nerds</h2>
+          <p class="subtitle-2">The Expert IT Consultants You Can Trust!</p>
+        </v-col>
+      </v-row>
+    </v-container>
 
     <section id="about">
       <v-row>
