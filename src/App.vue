@@ -122,7 +122,7 @@ const workExperience = ref([
     <section id="about">
       <v-row>
         <v-col cols="6" class="d-none d-md-flex flex-column">
-          <v-img :src="image1Url" max-height="90vh"/>
+          <v-img :src="image1Url" max-height="90vh" />
           <div class="text-disabled credit">
             Photo by <a
               href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena
@@ -194,7 +194,7 @@ const workExperience = ref([
             </v-card>
           </v-col>
           <v-col cols="6" class="d-none d-md-flex">
-            <v-img class="ma-4" :src="profilImageUrl" max-height="60vh"/>
+            <v-img class="ma-4" :src="profilImageUrl" max-height="60vh" />
           </v-col>
         </v-row>
       </v-container>
