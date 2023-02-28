@@ -59,7 +59,7 @@ const workExperience = ref([
 
 <template>
   <v-app>
-    <v-navigation-drawer v-model="drawer" location="bottom" temporary>
+    <v-navigation-drawer v-model="drawer" location="bottom" temporary class="">
       <v-list-item v-for="link in links" :key="link.text" @click="scrollTo(link.target)">
         <v-btn variant="text" class="mx-2" rounded="xl">
           {{ link.text }}
@@ -67,18 +67,27 @@ const workExperience = ref([
       </v-list-item>
     </v-navigation-drawer>
     <v-app-bar app elevation="10">
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer">
-        <v-img :src="logosmallUrl" width="4vh"></v-img>
-      </v-app-bar-nav-icon>
-      <v-app-bar-title class="font-weight-thin">
+      <div class="ma-2 ">
+        <v-img :src="logosmallUrl" width="4vh" />
+      </div>
+      <v-app-bar-title class="font-weight-thin d-none d-md-flex">
+        <!-- app-bar-title hidden on xs and sm	 -->
         Northern Nerds
       </v-app-bar-title>
       <v-spacer></v-spacer>
+
       <v-row justify="center" no-gutters>
-        <v-btn v-for="link in links" :key="link.text" variant="text" class="mx-2" rounded="xl"
-          @click="scrollTo(link.target)">
-          {{ link.text }}
-        </v-btn>
+        <v-col cols="12">
+          <!-- HAMBURGER is only visible on xs -->
+          <div class="d-flex justify-end">
+            <v-btn @click="drawer = !drawer" :icon="drawer ? 'mdi-close' : 'mdi-menu'" class="d-sm-none" />
+            <!-- nav buttons are hidden -->
+            <v-btn v-for="link in links" :key="link.text" variant="text" class="mx-2 d-none d-sm-flex" rounded="xl"
+              @click="scrollTo(link.target)">
+              {{ link.text }}
+            </v-btn>
+          </div>
+        </v-col>
       </v-row>
     </v-app-bar>
 
