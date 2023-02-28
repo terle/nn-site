@@ -196,16 +196,15 @@ const workExperience = ref([
     <v-footer class="text-center d-flex flex-column">
       <div>
         <v-btn class="mx-4" icon="mdi-linkedin" variant="text" href="https://www.linkedin.com/in/tbrix/"
-          target="_blank"></v-btn>
-        <v-btn class="mx-4" icon="mdi-github" variant="text" href="https://github.com/terle/" target="_blank"></v-btn>
+          target="_blank" />
+        <v-btn class="mx-4" icon="mdi-github" variant="text" href="https://github.com/terle/" target="_blank" />
       </div>
       <div class="pt-0">
-        <v-btn variant="plain" href="https://datacvr.virk.dk/enhed/virksomhed/40216197" target="_blank"></v-btn>
+        <!-- <v-btn variant="plain" href="https://datacvr.virk.dk/enhed/virksomhed/40216197" target="_blank" /> -->
         <v-btn variant="plain"
           href="mailto:info@northern-nerds.dk"><v-icon>mdi-email</v-icon>info@northern-nerds.dk</v-btn>
         <v-btn variant="plain" href="tel:30234321"><v-icon>mdi-phone</v-icon> 30 234 321</v-btn>
       </div>
-      <v-divider></v-divider>
       <div>
         {{ new Date().getFullYear() }} — <strong>Northern Nerds</strong> - CVR 40216197
       </div>
