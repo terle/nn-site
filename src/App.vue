@@ -91,9 +91,9 @@ const workExperience = ref([
       </v-row>
     </v-app-bar>
 
-    <section id="top">
-      <v-container fluid>
-        <v-parallax class="mt-16" height="60vw" :src="parrallaxImageUrl">
+    
+      <v-container fluid class="pa-0">
+        <v-parallax class="mt-13" height="60vw" :src="parrallaxImageUrl">
           <div class="mt-8 d-flex flex-column  align-center">
             <v-img :src="logoBigUrl" width="40vw" max-width="50vw"></v-img>
             <div class="text-h6 font-weight-light text-white mt-2">
@@ -108,7 +108,7 @@ const workExperience = ref([
             href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         </div>
       </v-container>
-      <v-container class="tagline text-center text-uppercase text-white bg-grey-darken-2 py-4 px-0 " fluid>
+      <v-container fluid class="tagline text-center text-uppercase text-white bg-grey-darken-2 py-4 px-0">
         <v-row align="center">
           <v-col cols="12">
             <h1 class="headline mb-6"> Revolutionize Your Business</h1>
@@ -117,7 +117,6 @@ const workExperience = ref([
           </v-col>
         </v-row>
       </v-container>
-    </section>
 
     <section id="about">
       <v-row>
