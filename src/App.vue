@@ -194,7 +194,7 @@ const workExperience = ref([
             </v-card>
           </v-col>
           <v-col cols="6" class="d-none d-md-flex">
-            <v-img class="ma-4" :src="profilImageUrl" max-height="60vh" />
+            <v-img class="ma-4" :src="profilImageUrl" height="50vw" max-height="60vw" />
           </v-col>
         </v-row>
       </v-container>
