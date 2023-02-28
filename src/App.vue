@@ -99,18 +99,17 @@ const workExperience = ref([
             href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         </div>
       </v-container>
-
-      <v-container>
-        <v-row>
-          <p class="text-h5 text-justify text-uppercase">
-            Revolutionize Your Business with Cutting-Edge IT Solutions from Northern Nerds
-          </p>
-          <p class="text-h5 text-justify text-uppercase" >
-            The Expert IT Consultants You Can Trust!
-          </p>
+      <v-container class="tagline text-center text-uppercase text-white bg-grey-darken-2 py-4 px-0 " fluid>
+        <v-row align="center">
+          <v-col cols="12">
+            <h1 class="headline mb-6"> Revolutionize Your Business</h1>
+            <h2 class="subtitle-1 mb-12">with Cutting-Edge IT Solutions from Northern Nerds</h2>
+            <p class="subtitle-2">The Expert IT Consultants You Can Trust!</p>
+          </v-col>
         </v-row>
       </v-container>
     </section>
+
     <section id="about">
       <v-row>
         <v-col cols="6" class="d-none d-md-flex flex-column">
@@ -220,5 +219,9 @@ const workExperience = ref([
 .credit>a {
 
   color: #BDBDBD;
+}
+
+.tagline {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 </style>
