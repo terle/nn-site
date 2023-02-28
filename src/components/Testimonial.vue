@@ -57,10 +57,11 @@ const data = ref(recommendationData.sort((a, b) => b.recommendationDate.getTime(
 </script>
 
 <template>
-    <div class="text-h2">
+    
+    <v-container>
+        <div class="text-h2">
         Testimonials
     </div>
-    <v-container>
         <v-row>
             <v-col v-for="(item, index) in data" :key="item.name" xl="4" lg="6" md="6" cols="12">
                 <v-card class="ma-4">
