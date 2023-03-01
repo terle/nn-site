@@ -23,7 +23,7 @@ const links = ref([
 const workExperience = ref([
   {
     pow: "Northern Nerds",
-    period: "2019-now",
+    period: "2019 - now",
     title: "Freelance Consultant"
   },
   {
@@ -178,13 +178,15 @@ const workExperience = ref([
                 <v-timeline side="end">
                   <v-timeline-item v-for="(item, key) in workExperience" :key="item.title" dot-color="blue-grey-lighten-3"
                     size="small" rounded>
-                    <div class="d-flex">
-                      <strong class="me-4">{{ item.pow }}</strong>
-                      <div>
-                        <strong>{{ item.period }}</strong>
-                        <div class="text-caption">
+                    <div class="d-flex flex-column">
+                      <div class="text-h6 font-weight-black">
                           {{ item.title }}
                         </div>
+                      <div class="text-subtitle-1">
+                        {{ item.pow }}
+                      </div>
+                      <div class="text-caption">
+                        {{ item.period }}
                       </div>
                     </div>
                   </v-timeline-item>
