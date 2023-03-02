@@ -108,6 +108,7 @@ const workExperience = ref([
           href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
       </div>
     </v-container>
+
     <v-container fluid class="tagline text-center text-uppercase text-white bg-grey-darken-2 py-4 px-0">
       <v-row align="center">
         <v-col cols="12">
@@ -119,15 +120,17 @@ const workExperience = ref([
     </v-container>
 
     <section id="about">
+      <v-container fluid>
       <v-row>
         <v-col cols="6" class="d-none d-md-flex flex-column">
-          <v-img :src="image1Url" max-height="90vh" />
-          <div class="text-disabled credit">
+          <v-img :src="image1Url" max-height="90vh" style="position: relative;">
+          <div class="text-disabled credit" style="position: absolute; bottom: 0; width: 100%;">
             Photo by <a
               href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena
               Sergienko</a> on <a
               href="https://unsplash.com/photos/dIMJWLx1YbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
           </div>
+          </v-img>
         </v-col>
         <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
           <div>
@@ -150,6 +153,7 @@ const workExperience = ref([
           </div>
         </v-col>
       </v-row>
+    </v-container>
     </section>
 
     <section id="testimonials">
