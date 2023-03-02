@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Testimonial from './components/Testimonial.vue'
+import Contact from './components/Contact.vue'
 import parrallaxImageUrl from './assets/jason-hogan-YyFwUKzv5FM-unsplash.jpg'
 import logoBigUrl from './assets/logo-big.svg'
 import logosmallUrl from './assets/logo-smal.svg'
@@ -91,7 +92,6 @@ const workExperience = ref([
       </v-row>
     </v-app-bar>
 
-
     <v-container fluid class="pa-0" id="top">
       <v-parallax class="mt-13" height="60vw" :src="parrallaxImageUrl">
         <div class="mt-8 d-flex flex-column  align-center">
@@ -156,6 +156,11 @@ const workExperience = ref([
       <Testimonial />
     </section>
 
+    <section id="contact">
+      <Contact />
+    </section>
+
+
     <section id="me" class="">
       <v-container fluid>
         <v-row justify="center">
@@ -180,8 +185,8 @@ const workExperience = ref([
                     size="small" rounded>
                     <div class="d-flex flex-column">
                       <div class="text-h6 font-weight-black">
-                          {{ item.title }}
-                        </div>
+                        {{ item.title }}
+                      </div>
                       <div class="text-subtitle-1">
                         {{ item.pow }}
                       </div>
@@ -210,7 +215,7 @@ const workExperience = ref([
       <div class="pt-0">
         <!-- <v-btn variant="plain" href="https://datacvr.virk.dk/enhed/virksomhed/40216197" target="_blank" /> -->
         <v-btn variant="plain"
-          href="mailto:info@northern-nerds.dk"><v-icon>mdi-email</v-icon>info@northern-nerds.dk</v-btn>
+          href="mailto:terkel@northern-nerds.dk"><v-icon>mdi-email</v-icon>terkel@northern-nerds.dk</v-btn>
         <v-btn variant="plain" href="tel:30234321"><v-icon>mdi-phone</v-icon> 30 234 321</v-btn>
       </div>
       <div>
@@ -220,7 +225,7 @@ const workExperience = ref([
   </v-app>
 </template>
 
-<style scoped>
+<style>
 .credit {
   background-color: #F5F5F5;
 }
