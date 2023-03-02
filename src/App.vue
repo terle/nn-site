@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import Testimonial from './components/Testimonial.vue'
 import Contact from './components/Contact.vue'
+import About from './components/About.vue'
+import Me from './components/Me.vue'
 import parrallaxImageUrl from './assets/jason-hogan-YyFwUKzv5FM-unsplash-min.jpg'
 import logoBigUrl from './assets/logo-big.svg'
 import logosmallUrl from './assets/logo-smal.svg'
-import profilImageUrl from './assets/profile.png'
-import image1Url from './assets/olena-sergienko-dIMJWLx1YbE-unsplash.jpg'
+
 import { ref } from 'vue'
 
 const scrollTo = (elmId: string) => {
@@ -22,40 +23,7 @@ const links = ref([
   { text: "Contact", target: "contact" }
 ])
 
-const workExperience = ref([
-  {
-    pow: "Northern Nerds",
-    period: "2019 - now",
-    title: "Freelance Consultant"
-  },
-  {
-    pow: "Apply Agency",
-    period: "Dec 2021 - Jan 2023",
-    title: "Senior Software Udvikler"
-  },
-  {
-    pow: "Nodeco A/S",
-    period: "Aug 2020 - Dec 2021",
-    title: "IT Architect"
-  },
-  {
-    pow: "Codehouse (later Valtech)",
-    period: "Apr 2017 - Apr 2019",
-    title: "Consultant/Sitecore Developer"
-  }, {
-    pow: "Rehfeld (later IQVIA)",
-    period: "Apr 2016 - Apr 2017",
-    title: "Consultant"
-  }, {
-    pow: "Netcompany",
-    period: "Jan 2014 - Apr 2016",
-    title: "Senior Developer"
-  }, {
-    pow: "Noitso",
-    period: "Jun 2012 - Jun 2013",
-    title: "Intern & Student Worker"
-  }
-])
+
 
 </script>
 
@@ -123,40 +91,7 @@ const workExperience = ref([
     </v-container>
 
     <section id="about">
-      <v-container fluid>
-        <v-row>
-          <v-col cols="6" class="d-none d-md-flex flex-column">
-            <v-img :src="image1Url" max-height="90vh">
-
-              <div class="text-disabled credit">
-                Photo by <a
-                  href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena
-                  Sergienko</a> on <a
-                  href="https://unsplash.com/photos/dIMJWLx1YbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-              </div>
-            </v-img>
-          </v-col>
-          <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
-            <div>
-              <div class="text-h2">About</div>
-              <p class="ma-4">
-                Northern Nerds is a Danish IT consulting business run by Terkel Brix, a freelance IT consultant with 12+
-                years of experience. Terkel specializes in Web Application Development, C# and ASP.NET Development,
-                Sitecore/C#-based Solutions, and Vue.js Development. He offers personalized solutions to businesses of all
-                sizes and industries, building strong relationships with clients and delivering exceptional results that
-                exceed their expectations.
-              </p>
-              <p class="ma-4">
-                Terkel is committed to providing exceptional customer service and support throughout every stage of the
-                project.
-              </p>
-              <p class="ma-4">
-                Thank you for considering Northern Nerds for your IT consulting needs.
-              </p>
-            </div>
-          </v-col>
-        </v-row>
-      </v-container>
+      <About />
     </section>
 
     <section id="testimonials">
@@ -164,56 +99,12 @@ const workExperience = ref([
     </section>
 
     <section id="me" class="">
-      <v-container fluid>
-        <v-row justify="center">
-          <div class="d-flex align-center flex-column">
-            <div class="text-h2">
-              Terkel Brix
-            </div>
-            <div class="text-h6 text-medium-emphasis">
-              Bachelor of Engineering, IT - DTU - 2013
-            </div>
-          </div>
-        </v-row>
-        <v-row>
-          <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
-            <v-card class="ma-4" height="100%">
-              <v-card-title>
-                Career
-              </v-card-title>
-              <v-card-text>
-                <v-timeline side="end">
-                  <v-timeline-item v-for="(item, key) in workExperience" :key="item.title" dot-color="blue-grey-lighten-3"
-                    size="small" rounded>
-                    <div class="d-flex flex-column">
-                      <div class="text-h6 font-weight-black">
-                        {{ item.title }}
-                      </div>
-                      <div class="text-subtitle-1">
-                        {{ item.pow }}
-                      </div>
-                      <div class="text-caption">
-                        {{ item.period }}
-                      </div>
-                    </div>
-                  </v-timeline-item>
-                </v-timeline>
-              </v-card-text>
-            </v-card>
-          </v-col>
-          <v-col cols="6" class="d-none d-md-flex">
-            <v-img class="ma-4" :src="profilImageUrl" height="50vw" max-height="60vw" />
-          </v-col>
-        </v-row>
-      </v-container>
+      <Me />
     </section>
 
     <section id="contact">
       <Contact />
     </section>
-
-
-
 
     <v-footer class="text-center d-flex flex-column">
       <div>
