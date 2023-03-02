@@ -19,6 +19,7 @@ const links = ref([
   { text: 'About', target: 'about' },
   { text: 'Testimonial', target: 'testimonials' },
   { text: 'Me', target: 'me' },
+  { text: "Contact", target: "contact" }
 ])
 
 const workExperience = ref([
@@ -101,13 +102,14 @@ const workExperience = ref([
             Maximazing freedom since 2019
           </div>
         </div>
+        <div class="text-disabled credit">
+          Photo by <a
+            href="https://unsplash.com/@jasonhogan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason
+            Hogan</a> on <a
+            href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        </div>
       </v-parallax>
-      <div class="text-disabled credit">
-        Photo by <a
-          href="https://unsplash.com/@jasonhogan?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jason
-          Hogan</a> on <a
-          href="https://unsplash.com/s/photos/freedom?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      </div>
+
     </v-container>
 
     <v-container fluid class="tagline text-center text-uppercase text-white bg-grey-darken-2 py-4 px-0">
@@ -124,8 +126,9 @@ const workExperience = ref([
       <v-container fluid>
         <v-row>
           <v-col cols="6" class="d-none d-md-flex flex-column">
-            <v-img :src="image1Url" max-height="90vh" style="position: relative;">
-              <div class="text-disabled credit" style="position: absolute; bottom: 0; width: 100%;">
+            <v-img :src="image1Url" max-height="90vh">
+
+              <div class="text-disabled credit">
                 Photo by <a
                   href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena
                   Sergienko</a> on <a
@@ -144,10 +147,9 @@ const workExperience = ref([
                 exceed their expectations.
               </p>
               <p class="ma-4">
-                Terkel is committed to providing exceptional customer service and support
-                throughout every stage of the project.
+                Terkel is committed to providing exceptional customer service and support throughout every stage of the
+                project.
               </p>
-
               <p class="ma-4">
                 Thank you for considering Northern Nerds for your IT consulting needs.
               </p>
@@ -160,11 +162,6 @@ const workExperience = ref([
     <section id="testimonials">
       <Testimonial />
     </section>
-
-    <section id="contact">
-      <Contact />
-    </section>
-
 
     <section id="me" class="">
       <v-container fluid>
@@ -211,6 +208,13 @@ const workExperience = ref([
       </v-container>
     </section>
 
+    <section id="contact">
+      <Contact />
+    </section>
+
+
+
+
     <v-footer class="text-center d-flex flex-column">
       <div>
         <v-btn class="mx-4" icon="mdi-linkedin" variant="text" href="https://www.linkedin.com/in/tbrix/" target="_blank"
@@ -233,13 +237,19 @@ const workExperience = ref([
 </template>
 
 <style>
-.credit {
-  background-color: #F5F5F5;
+.credit>a {
+  color: #616161;
 }
 
-.credit>a {
-
-  color: #BDBDBD;
+.credit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .tagline {
