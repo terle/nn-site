@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Testimonial from './components/Testimonial.vue'
 import Contact from './components/Contact.vue'
-import parrallaxImageUrl from './assets/jason-hogan-YyFwUKzv5FM-unsplash.jpg'
+import parrallaxImageUrl from './assets/jason-hogan-YyFwUKzv5FM-unsplash-min.jpg'
 import logoBigUrl from './assets/logo-big.svg'
 import logosmallUrl from './assets/logo-smal.svg'
 import profilImageUrl from './assets/profile.png'
@@ -62,7 +62,7 @@ const workExperience = ref([
   <v-app>
     <v-navigation-drawer v-model="drawer" location="bottom" temporary class="">
       <v-list-item v-for="link in links" :key="link.text" @click="scrollTo(link.target)">
-        <v-btn variant="text" class="mx-2" rounded="xl">
+        <v-btn variant="text" class="mx-2" rounded="xl" :aria-label="`NavTo-${link.text}-button}`">
           {{ link.text }}
         </v-btn>
       </v-list-item>
@@ -81,10 +81,11 @@ const workExperience = ref([
         <v-col cols="12">
           <!-- HAMBURGER is only visible on xs -->
           <div class="d-flex justify-end">
-            <v-btn @click="drawer = !drawer" :icon="drawer ? 'mdi-close' : 'mdi-menu'" class="d-sm-none" />
+            <v-btn @click="drawer = !drawer" :icon="drawer ? 'mdi-close' : 'mdi-menu'" class="d-sm-none"
+              aria-label="Nav-hamburger-button" />
             <!-- nav buttons are hidden -->
             <v-btn v-for="link in links" :key="link.text" variant="text" class="mx-2 d-none d-sm-flex" rounded="xl"
-              @click="scrollTo(link.target)">
+              @click="scrollTo(link.target)" :aria-label="`nav-button-for-${link.text}`">
               {{ link.text }}
             </v-btn>
           </div>
@@ -121,39 +122,39 @@ const workExperience = ref([
 
     <section id="about">
       <v-container fluid>
-      <v-row>
-        <v-col cols="6" class="d-none d-md-flex flex-column">
-          <v-img :src="image1Url" max-height="90vh" style="position: relative;">
-          <div class="text-disabled credit" style="position: absolute; bottom: 0; width: 100%;">
-            Photo by <a
-              href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena
-              Sergienko</a> on <a
-              href="https://unsplash.com/photos/dIMJWLx1YbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-          </div>
-          </v-img>
-        </v-col>
-        <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
-          <div>
-            <div class="text-h2">About</div>
-            <p class="ma-4">
-              Northern Nerds is a Danish IT consulting business run by Terkel Brix, a freelance IT consultant with 12+
-              years of experience. Terkel specializes in Web Application Development, C# and ASP.NET Development,
-              Sitecore/C#-based Solutions, and Vue.js Development. He offers personalized solutions to businesses of all
-              sizes and industries, building strong relationships with clients and delivering exceptional results that
-              exceed their expectations.
-            </p>
-            <p class="ma-4">
-              Terkel is committed to providing exceptional customer service and support
-              throughout every stage of the project.
-            </p>
+        <v-row>
+          <v-col cols="6" class="d-none d-md-flex flex-column">
+            <v-img :src="image1Url" max-height="90vh" style="position: relative;">
+              <div class="text-disabled credit" style="position: absolute; bottom: 0; width: 100%;">
+                Photo by <a
+                  href="https://unsplash.com/@olenkasergienko?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Olena
+                  Sergienko</a> on <a
+                  href="https://unsplash.com/photos/dIMJWLx1YbE?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+              </div>
+            </v-img>
+          </v-col>
+          <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
+            <div>
+              <div class="text-h2">About</div>
+              <p class="ma-4">
+                Northern Nerds is a Danish IT consulting business run by Terkel Brix, a freelance IT consultant with 12+
+                years of experience. Terkel specializes in Web Application Development, C# and ASP.NET Development,
+                Sitecore/C#-based Solutions, and Vue.js Development. He offers personalized solutions to businesses of all
+                sizes and industries, building strong relationships with clients and delivering exceptional results that
+                exceed their expectations.
+              </p>
+              <p class="ma-4">
+                Terkel is committed to providing exceptional customer service and support
+                throughout every stage of the project.
+              </p>
 
-            <p class="ma-4">
-              Thank you for considering Northern Nerds for your IT consulting needs.
-            </p>
-          </div>
-        </v-col>
-      </v-row>
-    </v-container>
+              <p class="ma-4">
+                Thank you for considering Northern Nerds for your IT consulting needs.
+              </p>
+            </div>
+          </v-col>
+        </v-row>
+      </v-container>
     </section>
 
     <section id="testimonials">
@@ -212,15 +213,17 @@ const workExperience = ref([
 
     <v-footer class="text-center d-flex flex-column">
       <div>
-        <v-btn class="mx-4" icon="mdi-linkedin" variant="text" href="https://www.linkedin.com/in/tbrix/"
-          target="_blank" />
-        <v-btn class="mx-4" icon="mdi-github" variant="text" href="https://github.com/terle/" target="_blank" />
+        <v-btn class="mx-4" icon="mdi-linkedin" variant="text" href="https://www.linkedin.com/in/tbrix/" target="_blank"
+          aria-label="linkedin-button" />
+        <v-btn class="mx-4" icon="mdi-github" variant="text" href="https://github.com/terle/" target="_blank"
+          aria-label="github-button" />
       </div>
       <div class="pt-0">
         <!-- <v-btn variant="plain" href="https://datacvr.virk.dk/enhed/virksomhed/40216197" target="_blank" /> -->
-        <v-btn variant="plain"
-          href="mailto:terkel@northern-nerds.dk"><v-icon>mdi-email</v-icon>terkel@northern-nerds.dk</v-btn>
-        <v-btn variant="plain" href="tel:30234321"><v-icon>mdi-phone</v-icon> 30 234 321</v-btn>
+        <v-btn variant="plain" href="mailto:terkel@northern-nerds.dk" aria-label="mail-to-button"><v-icon
+            icon="mdi-email" />terkel@northern-nerds.dk</v-btn>
+        <v-btn variant="plain" href="tel:30234321" aria-label="phone-me-button"><v-icon icon="mdi-phone" />30 234
+          321</v-btn>
       </div>
       <div>
         {{ new Date().getFullYear() }} — <strong>Northern Nerds</strong> - CVR 40216197

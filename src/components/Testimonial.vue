@@ -57,11 +57,10 @@ const data = ref(recommendationData.sort((a, b) => b.recommendationDate.getTime(
 </script>
 
 <template>
-    
     <v-container>
         <div class="text-h2">
-        Testimonials
-    </div>
+            Testimonials
+        </div>
         <v-row>
             <v-col v-for="(item, index) in data" :key="item.name" xl="4" lg="6" md="6" cols="12">
                 <v-card class="ma-4">
@@ -96,7 +95,8 @@ const data = ref(recommendationData.sort((a, b) => b.recommendationDate.getTime(
                                 <div class="d-flex justify-end">
                                     <v-btn v-if="item.recommendationTextRaw.length > 200"
                                         :icon="item.showMore ? 'mdi-chevron-up' : 'mdi-chevron-down'" variant="outlined"
-                                        size="small" @click="item.showMore = !item.showMore" class=""></v-btn>
+                                        size="small" @click="item.showMore = !item.showMore" class=""
+                                        aria-label="show-more-button" />
                                 </div>
                             </v-col>
                         </v-row>
@@ -111,5 +111,4 @@ const data = ref(recommendationData.sort((a, b) => b.recommendationDate.getTime(
 a {
     text-decoration: none;
 }
-
 </style>

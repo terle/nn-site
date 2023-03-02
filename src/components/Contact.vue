@@ -43,8 +43,10 @@ const submitForm = () => {
                 <v-card class="pa-6">
                     <div class="text-h3 font-bold mb-6">Send me a message</div>
                     <v-form @submit.prevent="submitForm">
-                        <v-text-field v-model="name" label="Name" outlined class="mb-4"></v-text-field>
-                        <v-textarea v-model="message" label="Message" outlined class="mb-4"></v-textarea>
+                        <v-text-field v-model="name" label="Name" outlined class="mb-4" aria-label="name-input"
+                            title="name-input" aria-placeholder="Enter your name" placeholder="Enter your name" />
+                        <v-textarea v-model="message" label="Message" outlined class="mb-4" aria-label="message-input"
+                            placeholder="Enter your message" />
                         <v-btn type="submit" color="primary" dark :disabled="submitButtonDisabled">Submit</v-btn>
                     </v-form>
                 </v-card>
