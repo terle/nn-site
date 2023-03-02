@@ -17,7 +17,7 @@ const submitForm = () => {
 <template>
     <v-container fluid>
         <div class="text-h2">Contact Me</div>
-        <v-row>
+        <v-row justify="center">
             <v-col cols="6" class="d-none d-md-flex flex-column ">
                 <v-img :src="contactImgageUrl" max-height="90vh">
                     <div class="text-disabled credit">

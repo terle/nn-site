@@ -5,7 +5,7 @@ import image1Url from './../assets/olena-sergienko-dIMJWLx1YbE-unsplash.jpg'
 
 <template>
 
- <v-container fluid>
+ <v-container fluid class="pt-0">
         <v-row>
           <v-col cols="6" class="d-none d-md-flex flex-column">
             <v-img :src="image1Url" max-height="90vh">

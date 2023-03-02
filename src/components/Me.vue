@@ -50,8 +50,8 @@ const workExperience = ref([
                 </div>
             </div>
         </v-row>
-        <v-row>
-            <v-col cols="12" md="6" class="d-flex flex-column justify-center align-center">
+        <v-row justify="center">
+            <v-col cols="12" md="6" class="d-flex flex-column">
                 <v-card class="ma-4" height="100%">
                     <v-card-title>
                         Career
@@ -77,7 +77,7 @@ const workExperience = ref([
                 </v-card>
             </v-col>
             <v-col cols="6" class="d-none d-md-flex">
-                <v-img class="ma-4" :src="profilImageUrl" height="50vw" max-height="60vw" />
+                <v-img class="ma-4" :src="profilImageUrl"  max-height="90vh" />
             </v-col>
         </v-row>
     </v-container>
