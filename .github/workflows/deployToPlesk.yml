@@ -34,8 +34,8 @@ jobs:
       - name: 📂 Sync folders and files to the server
         uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
-          server: ${{ secrets.STRATO_NN_FTP_SERVER }}
-          username: ${{ secrets.STRATO_NN_FTP_USERNAME }}
-          password: ${{ secrets.STRATO_NN_FTP_PASSWORD }}
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./httpdocs/
