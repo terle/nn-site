@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import Testimonial from './components/Testimonial.vue'
 import Contact from './components/Contact.vue'
 import About from './components/About.vue'
@@ -7,12 +8,15 @@ import parrallaxImageUrl from './assets/jason-hogan-YyFwUKzv5FM-unsplash-min.jpg
 import logoBigUrl from './assets/logo-big.svg'
 import logosmallUrl from './assets/logo-smal.svg'
 
+import Plausible from 'plausible-tracker'
 import { ref } from 'vue'
+const { trackEvent } = Plausible()
 
 const scrollTo = (elmId: string) => {
   const element = document.getElementById(elmId);
   if (element == null)
     return
+    trackEvent(`scroll - ${elmId}`);
   element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 }
 const drawer = ref(false);
@@ -22,8 +26,6 @@ const links = ref([
   { text: 'Me', target: 'me' },
   { text: "Contact", target: "contact" }
 ])
-
-
 
 </script>
 
