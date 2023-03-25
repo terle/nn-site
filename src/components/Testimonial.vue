@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-
+import Plausible from 'plausible-tracker'
+const { trackEvent } = Plausible()
 const recommendationData = [
     {
         name: "Rune Nielsen",
@@ -50,6 +51,11 @@ const recommendationData = [
 
 ]
 
+function chevronClicked(item: any) {
+    trackEvent("TestimonialClick", { props: { name: item.name, open: item.showMore } });
+    item.showMore = !item.showMore
+}
+
 const truncatedText = (text: string) => {
     return text.slice(0, 200) + '...'
 }
@@ -95,8 +101,7 @@ const data = ref(recommendationData.sort((a, b) => b.recommendationDate.getTime(
                                 <div class="d-flex justify-end">
                                     <v-btn v-if="item.recommendationTextRaw.length > 200"
                                         :icon="item.showMore ? 'mdi-chevron-up' : 'mdi-chevron-down'" variant="outlined"
-                                        size="small" @click="item.showMore = !item.showMore" class=""
-                                        aria-label="show-more-button" />
+                                        size="small" @click="chevronClicked(item)" class="" aria-label="show-more-button" />
                                 </div>
                             </v-col>
                         </v-row>
