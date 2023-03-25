@@ -16,7 +16,7 @@ const scrollTo = (elmId: string) => {
   const element = document.getElementById(elmId);
   if (element == null)
     return
-    trackEvent(`scroll - ${elmId}`);
+  trackEvent("ScrollClick", { props: { elmId } });
   element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 }
 const drawer = ref(false);
