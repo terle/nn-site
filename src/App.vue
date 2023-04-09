@@ -8,15 +8,12 @@ import parrallaxImageUrl from './assets/jason-hogan-YyFwUKzv5FM-unsplash-min.jpg
 import logoBigUrl from './assets/logo-big.svg'
 import logosmallUrl from './assets/logo-smal.svg'
 
-import Plausible from 'plausible-tracker'
 import { ref } from 'vue'
-const { trackEvent } = Plausible()
 
 const scrollTo = (elmId: string) => {
   const element = document.getElementById(elmId);
   if (element == null)
     return
-  trackEvent("ScrollClick", { props: { elmId } });
   element.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
 }
 const drawer = ref(false);
