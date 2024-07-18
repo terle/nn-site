@@ -11,6 +11,7 @@
   <!-- Matomo -->
   <script>
     var _paq = window._paq = window._paq || [];
+    _paq.push(['requireConsent']);
     /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
     _paq.push(['trackPageView']);
     _paq.push(['enableLinkTracking']);
@@ -28,6 +29,18 @@
 <body>
   <div id="app"></div>
   <script type="module" src="/src/main.ts"></script>
+
+  <!-- Mautic tracking script -->
+  <script>
+    (function (w, d, t, u, n, a, m) {
+      w['MauticTrackingObject'] = n;
+      w[n] = w[n] || function () { (w[n].q = w[n].q || []).push(arguments) }, a = d.createElement(t),
+        m = d.getElementsByTagName(t)[0]; a.async = 1; a.src = u; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://marketers.northern-nerds.dk/mtc.js', 'mt');
+
+    mt('send', 'pageview');
+  </script>
+  <!--END  Mautic tracking script -->
 </body>
 
 </html>
